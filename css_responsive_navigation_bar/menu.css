@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background-color: #f0f8ff;
+  width: 100%;
+}
+
+/* HEADER */
+
+header {
+  background-color: rgb(173, 217, 253);
+  border-bottom: 0.8px solid #000;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  /* transition: all 0.5s ease; */
+}
+
+/* HEADER LOGO */
+.header__logo-text {
+  margin-left: 0.7rem;
+  /* float: left; */
+  display: inline-block;
+  font-size: 2rem;
+  padding
+}
+
+header .header__logo-text a {
+  text-decoration: none;
+  color: #000;
+}
+
+header .header__logo-text a:hover {
+  opacity: 0.7;
+}
+
+/* Nav */
+header nav {
+  clear: both;
+  /* max-height: 0;
+  transition: max-height 0.5s ease; */
+}
+
+/* HAMBURGER MENU LABEL*/
+
+header .menu-icon {
+  padding: 25px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+/* MENU HOVER */
+ .menu-icon:hover .nav-icon::before {
+    transform: translate(0, 6px);
+}
+
+.menu-icon:hover .nav-icon::after {
+    transform: translate(0, -6px);
+}
+
+.menu-icon:hover .nav-icon {
+    background: #000;
+}
+
+/* HAMBURGER MENU ICON */
+header .menu-icon .nav-icon {
+  height: 2px;
+  width: 40px;
+  position: relative;
+  background: transparent;
+  display: block;
+}
+
+header .menu-icon .nav-icon::before,
+header .menu-icon .nav-icon::after {
+    width: 40px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    transform-origin: top center;
+    transition: all 0.5s ease;
+    content: "";
+    border-radius: 10px;
+}
+
+header .menu-icon .nav-icon::before {
+    transform: translate(0px, -4px);
+}
+
+header .menu-icon .nav-icon::after {
+    transform: translate(0px, 4px);
+}
+
+/* MENU CHECKBOX */
+.menu-btn {
+  display: none;
+}
+
+/* CHECKED MENU */
+header .menu-btn:checked ~ nav {
+  /* display: block; */
+  transform: scale(1, 1);
+}
+  /* transform-origin: top center;
+  animation: showMenu 0.5s ease-in-out forwards;
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+} */
+
+header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-25deg);
+  top:0;
+}
+
+header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(25deg);
+  top:0;
+}
+
+/* NAVIGATION BAR */
+nav {
+  position: absolute;
+  top: 52px;
+  width: 100%;
+  border-bottom: 0.5px solid #000;
+  background-color: rgb(173, 217, 253);
+  /* display: none; */
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: all 0.5s ease-in-out;
+}
+
+nav ul {
+  margin: 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+nav li {
+  padding: 0.5rem;
+  list-style-type: circle;
+}
+
+nav a {
+  margin-left: -10px;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  display: block;
+}
+
+nav li:hover {
+  list-style-type: disc;
+}
+
+
+/* @media (min-width:768px) {
+  nav {
+    display: inline-block;
+    float: right;
+    clear:none;
+  }
+  nav ul {
+    flex-flow: row;
+    justify-content: space-around;
+    gap: 30px;
+  }
+  nav li {
+  padding: 0.1rem 1rem;
+  }
+
+  nav a {
+  margin-left: -20px;
+  }
+  .menu-btn, .menu-icon, .nav-icon, .nav-icon::before, .nav-icon::after {
+    display: none;
+  }
+} */
+
+/*MEDIA QUERY*/
+@media (min-width:768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .menu-btn, .menu-icon, .nav-icon, .nav-icon::before, .nav-icon::after {
+    display: none;
+  }
+
+  nav {
+    display: inline-block;
+    clear: none;
+    margin-right: 1.5rem;
+    animation: none;
+    top: 0;
+    position: relative;
+    border: none;
+    transform: none;
+    display: block;
+  }
+
+  nav ul {
+    flex-flow: row;
+    justify-content: flex-end;
+    gap: 30px;
+    margin: 0.5rem 1rem;
+  }
+
+  .header__logo-text {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}
+
+/* BODY */

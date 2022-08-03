@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background-color: #f0f8ff;
+  width: 100%;
+}
+/* HEADER */
+header {
+  background-color: rgb(173, 217, 253);
+  border-bottom: 0.8px solid #000;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.5s ease;
+}
+/* HEADER LOGO */
+.header__logo-text {
+  margin-left: 0.7rem;
+  float: left;
+  display: block;
+  font-size: 2rem;
+  padding
+}
+
+header .header__logo-text a {
+  text-decoration: none;
+  color: #000;
+}
+
+header,
+nav {
+  clear: both;
+  /* max-height: 0;
+  transition: max-height 0.5s ease; */
+}
+
+header .header__logo-text a:hover {
+  opacity: 0.7;
+}
+
+/* HAMBURGER MENU */
+
+header .menu-icon {
+  /* aa */
+  padding: 25px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+header .menu-icon .nav-icon {
+  height: 2px;
+  width: 40px;
+  position: relative;
+  background: #000;
+  display: block;
+  /* position: relative;
+  transition: background .2s ease-in-out */
+}
+
+header .menu-icon .nav-icon::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 40px;
+  display: block;
+  top: 5px;
+  background: #000;
+  transition: all .2s ease-out;
+}
+
+header .menu-icon .nav-icon::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 40px;
+  display: block;
+  top: -5px;
+  background: #000;
+  transition: all .2s ease-out;
+}
+
+.menu-btn {
+  display: none;
+}
+
+header .menu-btn:checked ~ nav {
+  display: block;
+}
+
+
+
+
+
+/* NAVIGATION BAR */
+nav {
+  display: none;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+nav ul {
+  margin: 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+}
+nav li {
+  padding: 0.5rem;
+  list-style-type: circle;
+}
+nav a {
+  margin-left: -10px;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  display: block;
+}
+nav li:hover {
+  list-style-type: disc;
+}
